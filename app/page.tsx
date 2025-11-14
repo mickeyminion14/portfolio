@@ -20,7 +20,6 @@ export default function Home() {
         <TechStack />
         <Timeline />
         <Projects />
-        <GitHubStats />
         <Contact />
         <Footer />
         <ScrollToTop />

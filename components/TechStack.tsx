@@ -9,20 +9,27 @@ import {
   SiNextdotjs,
   SiTypescript,
   SiJavascript,
+  SiAngular,
+  SiMui,
+  SiShadcnui,
+  SiSocketdotio,
   SiHtml5,
   SiCss3,
   SiTailwindcss,
   SiFramer,
   SiRedux,
+  SiZod,
   SiNodedotjs,
+  SiNestjs,
   SiExpress,
-  SiPython,
-  SiDjango,
-  SiFastapi,
   SiPostgresql,
   SiMongodb,
-  SiRedis,
-  SiGraphql,
+  SiPrisma,
+  SiTypeorm,
+  SiSupabase,
+  SiClerk,
+  SiStripe,
+  SiStrapi,
   SiGit,
   SiDocker,
   SiVercel,
@@ -30,13 +37,17 @@ import {
   SiWebpack,
   SiVite,
   SiFigma,
-  SiLinux,
+  SiTurborepo,
+  SiNx,
 } from "react-icons/si";
-import { Cloud, Workflow } from "lucide-react";
+import { Cloud, Workflow, Database, Users, Network, CheckCircle, Box } from "lucide-react";
 
 interface TechSkill {
   name: string;
-  icon: any;
+  icon: React.ComponentType<{
+    className?: string;
+    style?: React.CSSProperties;
+  }>;
   color: string;
 }
 
@@ -49,9 +60,18 @@ export default function TechStack() {
       title: "Frontend",
       skills: [
         { name: "React", icon: SiReact, color: "#61DAFB" },
+        { name: "Angular", icon: SiAngular, color: "#DD0031" },
         { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
         { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
         { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+        { name: "Material UI", icon: SiMui, color: "#007FFF" },
+        { name: "Angular Material", icon: SiAngular, color: "#E91E63" },
+        { name: "PrimeNG", icon: SiAngular, color: "#FFD54F" },
+        { name: "shadcn/ui", icon: SiShadcnui, color: "#FFFFFF" },
+        { name: "Socket.IO", icon: SiSocketdotio, color: "#010101" },
+        { name: "Zod", icon: SiZod, color: "#3E67B1" },
+        { name: "Yup", icon: CheckCircle, color: "#E74C3C" },
+        { name: "Zustand", icon: Box, color: "#443E38" },
         { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
         { name: "CSS3", icon: SiCss3, color: "#1572B6" },
         { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
@@ -63,14 +83,18 @@ export default function TechStack() {
       title: "Backend",
       skills: [
         { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+        { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
         { name: "Express", icon: SiExpress, color: "#000000" },
-        { name: "Python", icon: SiPython, color: "#3776AB" },
-        { name: "Django", icon: SiDjango, color: "#092E20" },
-        { name: "FastAPI", icon: SiFastapi, color: "#009688" },
         { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-        { name: "Redis", icon: SiRedis, color: "#DC382D" },
-        { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
+        { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
+        { name: "Prisma", icon: SiPrisma, color: "#2D3748" },
+        { name: "TypeORM", icon: SiTypeorm, color: "#FE0902" },
+        { name: "Convex", icon: Database, color: "#F5A623" },
+        { name: "Clerk", icon: SiClerk, color: "#6C47FF" },
+        { name: "Stripe", icon: SiStripe, color: "#635BFF" },
+        { name: "Strapi", icon: SiStrapi, color: "#4945FF" },
+        { name: "Liveblocks", icon: Users, color: "#E5484D" },
       ],
     },
     {
@@ -79,11 +103,14 @@ export default function TechStack() {
         { name: "Git", icon: SiGit, color: "#F05032" },
         { name: "Docker", icon: SiDocker, color: "#2496ED" },
         { name: "AWS", icon: Cloud, color: "#FF9900" },
-        { name: "Vercel", icon: SiVercel, color: "#000000" },
+        { name: "Vercel", icon: SiVercel, color: "#FFFFFF" },
         { name: "CI/CD", icon: Workflow, color: "#2088FF" },
         { name: "Jest", icon: SiJest, color: "#C21325" },
         { name: "Webpack", icon: SiWebpack, color: "#8DD6F9" },
         { name: "Vite", icon: SiVite, color: "#646CFF" },
+        { name: "Turborepo", icon: SiTurborepo, color: "#EF4444" },
+        { name: "Nx", icon: SiNx, color: "#143055" },
+        { name: "Single-SPA", icon: Network, color: "#00A1E0" },
         { name: "Figma", icon: SiFigma, color: "#F24E1E" },
       ],
     },
@@ -159,8 +186,18 @@ export default function TechStack() {
                           className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-accent transition-colors cursor-default group"
                         >
                           <skill.icon
-                            className="w-10 h-10 transition-all duration-300 group-hover:drop-shadow-lg"
-                            style={{ color: skill.color }}
+                            className={`w-10 h-10 transition-all duration-300 group-hover:drop-shadow-lg ${
+                              skill.name === "shadcn/ui" ||
+                              skill.name === "Vercel"
+                                ? "bg-black dark:bg-white p-1.5 rounded text-white dark:text-black"
+                                : ""
+                            }`}
+                            style={
+                              skill.name === "shadcn/ui" ||
+                              skill.name === "Vercel"
+                                ? {}
+                                : { color: skill.color }
+                            }
                           />
                           <span className="text-xs text-center font-medium">
                             {skill.name}

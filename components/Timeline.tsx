@@ -28,66 +28,103 @@ export default function Timeline() {
     {
       id: 1,
       type: "work",
-      title: "Senior Full Stack Developer",
-      organization: "Tech Company Inc.",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
+      title: "Associate Tech Lead",
+      organization: "Appinventiv Technologies Pvt. Ltd.",
+      location: "Remote/Hybrid",
+      period: "Aug 2023 - Present",
       description:
         "Leading development of scalable web applications and mentoring junior developers.",
       achievements: [
-        "Architected microservices infrastructure reducing load time by 40%",
-        "Led team of 5 developers on flagship product",
-        "Implemented CI/CD pipeline improving deployment efficiency by 60%",
+        "Solution Designing & Architecture Design",
+        "Training/ mentoring, sessions and Code reviews",
+        "Technical Support and Guidance to the team",
+        "Requirement Gathering & Gap Analysis of the projects",
+        "Technical Documentation, Training and Sprint Planning",
+        "Project Estimation and Planning",
+        "Developers Review and Feedback",
+        "Risk Identification & Mitigation",
+        "Team Management",
+        "Determine the best possible technical resources & their effective cost based on the trending technology required for a successful product.",
       ],
-      technologies: ["React", "Node.js", "AWS", "Docker", "PostgreSQL"],
+      technologies: [
+        "React",
+        "Angular",
+        "NestJS",
+        "NextJS",
+        "PrimeNG",
+        "Yup",
+        "Redux",
+        "NX",
+        "TurboRepo",
+        "Micro Frontend Architecture",
+        "Webpack",
+        "Vite",
+        "CI/CD",
+        "Jest",
+        "Webpack",
+      ],
     },
     {
       id: 2,
       type: "work",
-      title: "Full Stack Developer",
-      organization: "Startup Solutions",
-      location: "Remote",
-      period: "2020 - 2022",
+      title: "Software Engineer",
+      organization: "Appinventiv Technologies Pvt. Ltd.",
+      location: "Remote/Hybrid",
+      period: "Jan 2020 - Aug 2023",
       description:
         "Developed and maintained multiple client projects using modern web technologies.",
       achievements: [
-        "Built 10+ production applications from scratch",
-        "Reduced API response time by 50% through optimization",
-        "Mentored 3 junior developers",
+        "Experience with Agile Development process and & tools like Jira for task management etc.",
+        "Worked on multiple projects with different technologies and frameworks",
+        "Bug Analysis and Fixing",
+        "Development, Testing and deployment of the projects",
+        "Focused towards writing quality, optimized and reusable code.",
+        "SEO optimized the websites",
+        "Writing clean, scalable and maintainable code by following standard practices of OOPs, design patterns, and project architecture.",
       ],
-      technologies: ["Next.js", "TypeScript", "MongoDB", "GraphQL"],
+      technologies: [
+        "React",
+        "Angular",
+        "NestJS",
+        "TypeScript",
+        "JavaScript",
+        "CSS",
+        "HTML",
+        "Bootstrap",
+        "Material UI",
+        "PrimeNG",
+        "Yup",
+        "Redux",
+      ],
     },
     {
       id: 3,
       type: "education",
-      title: "Bachelor of Science in Computer Science",
-      organization: "University of Technology",
-      location: "Boston, MA",
+      title: "BTech in Computer Science",
+      organization:
+        "Manav Rachna International Institute of Research and Studies",
+      location: "Faridabad, India",
       period: "2016 - 2020",
-      description:
-        "Focused on software engineering and web development. Dean's List all semesters.",
-      achievements: [
-        "GPA: 3.8/4.0",
-        "President of Computer Science Club",
-        "Winner of Annual Hackathon 2019",
-      ],
-      technologies: ["Java", "Python", "C++", "Algorithms", "Data Structures"],
+      description: "",
+      achievements: [],
+      technologies: [],
     },
     {
       id: 4,
       type: "work",
-      title: "Frontend Developer Intern",
-      organization: "Digital Agency",
-      location: "New York, NY",
-      period: "Summer 2019",
+      title: "Frontend Developer",
+      organization: "Visa2fly",
+      location: "Gurugram, India",
+      period: "April 2019 - Dec 2019",
       description:
-        "Assisted in developing responsive web applications for various clients.",
+        "Assisted in developing responsive web applications for their main customer portal visa2fly.com",
       achievements: [
-        "Developed 5 client websites",
-        "Improved mobile responsiveness across all projects",
-        "Contributed to company's component library",
+        "Developed the main client website simplifying the visa application process",
+        "Managed mobile responsive design",
+        "Led a small team of developers and helped them learn Angular and Bootstrap",
+        "Worked while my final university semester was going on at the same time",
       ],
-      technologies: ["React", "JavaScript", "CSS", "Figma"],
+      technologies: ["Angular 2+", "JavaScript", "CSS", "Bootstrap"],
     },
   ];
 
@@ -152,7 +189,7 @@ export default function Timeline() {
                       className="relative"
                     >
                       {/* Timeline Icon */}
-                      <div className="absolute left-8 md:left-1/2 w-12 h-12 rounded-full border-2 bg-background border-primary flex items-center justify-center transform -translate-x-1/2 z-10">
+                      <div className="absolute left-8 md:left-1/2 w-12 h-12 rounded-full border-4 bg-card border-primary flex items-center justify-center transform -translate-x-1/2 z-10 shadow-sm">
                         {item.type === "work" ? (
                           <Briefcase className="w-6 h-6 text-primary" />
                         ) : (
@@ -191,17 +228,19 @@ export default function Timeline() {
                                 {item.period}
                               </p>
                             </div>
-                            <motion.div
-                              animate={{ rotate: isExpanded ? 180 : 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="shrink-0"
-                            >
-                              {isExpanded ? (
-                                <ChevronUp className="w-5 h-5" />
-                              ) : (
-                                <ChevronDown className="w-5 h-5" />
-                              )}
-                            </motion.div>
+                            {item.achievements.length > 0 ? (
+                              <motion.div
+                                animate={{ rotate: isExpanded ? 180 : 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="shrink-0"
+                              >
+                                {isExpanded ? (
+                                  <ChevronUp className="w-5 h-5" />
+                                ) : (
+                                  <ChevronDown className="w-5 h-5" />
+                                )}
+                              </motion.div>
+                            ) : null}
                           </div>
 
                           <p className="text-muted-foreground mb-4">
@@ -209,41 +248,43 @@ export default function Timeline() {
                           </p>
 
                           {/* Expanded Content */}
-                          <motion.div
-                            initial={false}
-                            animate={{
-                              height: isExpanded ? "auto" : 0,
-                              opacity: isExpanded ? 1 : 0,
-                            }}
-                            transition={{ duration: 0.3 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="mb-4">
-                              <h4 className="font-semibold mb-2">
-                                Key Achievements:
-                              </h4>
-                              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                                {item.achievements.map((achievement, idx) => (
-                                  <li key={idx}>{achievement}</li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            {item.technologies && (
-                              <div>
+                          {item.achievements.length > 0 ? (
+                            <motion.div
+                              initial={false}
+                              animate={{
+                                height: isExpanded ? "auto" : 0,
+                                opacity: isExpanded ? 1 : 0,
+                              }}
+                              transition={{ duration: 0.3 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="mb-4">
                                 <h4 className="font-semibold mb-2">
-                                  Technologies:
+                                  Key Achievements:
                                 </h4>
-                                <div className="flex flex-wrap gap-2">
-                                  {item.technologies.map((tech, idx) => (
-                                    <Badge key={idx} variant="secondary">
-                                      {tech}
-                                    </Badge>
+                                <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                                  {item.achievements.map((achievement, idx) => (
+                                    <li key={idx}>{achievement}</li>
                                   ))}
-                                </div>
+                                </ul>
                               </div>
-                            )}
-                          </motion.div>
+
+                              {item.technologies && (
+                                <div>
+                                  <h4 className="font-semibold mb-2">
+                                    Technologies:
+                                  </h4>
+                                  <div className="flex flex-wrap gap-2">
+                                    {item.technologies.map((tech, idx) => (
+                                      <Badge key={idx} variant="secondary">
+                                        {tech}
+                                      </Badge>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </motion.div>
+                          ) : null}
                         </CardContent>
                       </Card>
                     </motion.div>

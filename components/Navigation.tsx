@@ -12,7 +12,7 @@ const navItems = [
   { name: "Tech Stack", href: "#tech-stack" },
   { name: "Timeline", href: "#timeline" },
   { name: "Projects", href: "#projects" },
-  { name: "GitHub", href: "#github-stats" },
+  // { name: "GitHub", href: "#github-stats" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -104,4 +104,3 @@ export default function Navigation() {
     </motion.nav>
   );
 }
-

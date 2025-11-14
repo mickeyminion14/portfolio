@@ -100,8 +100,6 @@ export default function Hero() {
                 2000,
                 "Problem Solver",
                 2000,
-                "Open Source Contributor",
-                2000,
               ]}
               wrapper="span"
               speed={50}
@@ -113,8 +111,9 @@ export default function Hero() {
 
         <motion.div variants={itemVariants}>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            I build exceptional digital experiences with modern web technologies.
-            Passionate about creating elegant solutions to complex problems.
+            I build exceptional digital experiences with modern web
+            technologies. Passionate about creating elegant solutions to complex
+            problems.
           </p>
         </motion.div>
 

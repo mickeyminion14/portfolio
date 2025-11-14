@@ -74,16 +74,20 @@ export default function About() {
               <CardContent className="p-6 md:p-8">
                 <p className="text-lg leading-relaxed mb-4">
                   With a strong foundation in both frontend and backend
-                  development, I specialize in creating seamless, high-performance
-                  web applications. My journey in software development has been
-                  driven by curiosity and a constant desire to learn new
-                  technologies.
+                  development, I specialize in creating seamless,
+                  high-performance web applications. My journey in software
+                  development has been driven by curiosity and a constant desire
+                  to learn new technologies.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  I believe in writing clean, maintainable code and creating
-                  intuitive user experiences. When I'm not coding, you can find
-                  me exploring new technologies, contributing to open-source
-                  projects, or sharing knowledge with the developer community.
+                  Experienced software engineer with 6+ years of expertise in
+                  building scalable, performant frontend architectures using
+                  Angular, React, and Next.js. Currently leading frontend
+                  development teams, driving technical strategy, code quality,
+                  and delivery for enterprise-scale applications. Passionate
+                  about UI/UX optimization, micro-frontend architecture, and
+                  mentoring engineers. Looking to contribute to high-impact,
+                  fast-paced teams solving real-world problems.
                 </p>
               </CardContent>
             </Card>
@@ -100,7 +104,9 @@ export default function About() {
                     <h3 className="text-xl font-semibold mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <p className="text-muted-foreground">
+                      {feature.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -111,4 +117,3 @@ export default function About() {
     </section>
   );
 }
-
