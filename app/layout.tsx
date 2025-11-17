@@ -44,7 +44,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${personalInfo.name} | ${personalInfo.title} Portfolio`,
     description: personalInfo.description,
-    creator: personalInfo.social.twitter,
     images: ["/opengraph-image"],
   },
   robots: {
